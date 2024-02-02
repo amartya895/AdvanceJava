@@ -2,6 +2,7 @@ package UNIT1;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class MethodType {
@@ -27,6 +28,14 @@ public class MethodType {
 //        System.out.println (y );
 
         list.stream ().limit ( 2 ).forEach ( System.out::println );
+
+
+        List<Integer> numLis = Arrays.asList ( 2,3,8,6,4,2,8,12,16,15,13,1 );
+      long evenCount =   numLis.stream ().filter ( x -> x%2==0 ).count ();
+        System.out.println (evenCount );
+
+        Optional<Integer> m =  numLis.stream ().min ( Integer::compareTo );
+        System.out.println (m.get () );
 
     }
 }
